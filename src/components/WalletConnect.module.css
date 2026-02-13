@@ -1,0 +1,69 @@
+.connected {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.address {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.disconnectBtn {
+  margin-left: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.disconnectBtn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.connectBtn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.connectBtn:hover {
+  opacity: 0.9;
+}
+.connectBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.connectWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.connectError {
+  font-size: 0.6875rem;
+  color: var(--danger);
+}
