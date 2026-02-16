@@ -6,7 +6,9 @@ import { simulateSwap } from "@/services";
 import { isValidAmount } from "@/lib/validation";
 
 export function useSwapEstimate() {
-  const [state, setState] = useState<AsyncState<SwapEstimate>>({ status: "idle" });
+  const [state, setState] = useState<AsyncState<SwapEstimate>>({
+    status: "idle",
+  });
 
   const estimate = useCallback(
     (amountIn: string, tokenIn: TokenMetadata, tokenOut: TokenMetadata) => {
@@ -19,7 +21,8 @@ export function useSwapEstimate() {
         const result = simulateSwap(amountIn, tokenIn, tokenOut);
         setState({ status: "success", data: result });
       } catch (err) {
-        const message = err instanceof Error ? err.message : "Swap simulation failed";
+        const message =
+          err instanceof Error ? err.message : "Swap simulation failed";
         setState({ status: "error", error: message });
       }
     },
